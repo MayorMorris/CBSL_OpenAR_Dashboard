@@ -1759,6 +1759,7 @@ function gatherEntityHistory(type, name){
 
 function getInvoicesForEntity(type, name){
   if(!DATA_ROOT.invoices) return [];
+  let invs = DATA_ROOT.invoices;
   if(state.revFilter !== 'all') invs = invs.filter(inv=>(inv.rt||'L')===state.revFilter);
   if(type==='hc') return invs.filter(inv=>inv.hc===name);
   if(type==='agy') return invs.filter(inv=>inv.c===name);
